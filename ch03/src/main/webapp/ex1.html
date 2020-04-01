@@ -1,9 +1,10 @@
 ﻿<!DOCTYPE HTML>
 <html>
-<head>
+<head lang="ko">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>마진과 패딩</title>
 <style type="text/css">
+* {margin: 0px; padding: 0px}
 body {
 	font-family: "돋움", "맑은 고딕";
 	font-size: 0.8em;
@@ -13,14 +14,44 @@ body {
 .box1 {
 	border:1px solid #666;
 	width:300px;
+	height: 50px;
 	background-color: #FFC;
+	cursor: default;
+	padding: 10px;
+	margin:0 auto;
+}
+</style>
+<script type="text/javascript">
+
+var add = function (number){
+	return i + 10;
+}
+var i = 1;
+
+var f = function () {
+	console.log("test");
 }
 
-</style>
+function onDivClicked(el) {
+	var marginTop = parseInt(el.style.marginTop);
+	var c = 0;
+	var intervalId = setInterval(function(){
+		if(marginTop<-80){
+		clearInterval(intervalId);
+		return;
+		}
+		marginTop -= 10;
+		el.style.marginTop=marginTop+"px";
+		console.log(c+":"+marginTop);
+		c++;
+		
+	},10)
+}
+</script>
 </head>
 
 <body>
-<div class="box1">
+<div class="box1" style="margin-top:100px" onclick="onDivClicked(this);">
 CSS에서 가장 보편적이고 많이 사용하는 마진과 패딩에 대한 값이 어떻게 적용되는지 확인해 보겠습니다.
 </div>
 
