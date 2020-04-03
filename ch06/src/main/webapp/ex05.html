@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript">
+// 변수의 범위
+// 1. 자바스크립트는 {} 블록 범위 없다.
+// 2. 블록안에서 var를 사용하게 되면 local 범위가 발생한다.(지역 변수가 된다.)
+var i = 10;
+var f = function() {
+	var i = 20;
+	j = 100;
+	console.log(i);
+	i = j - i;
+}
+f();
+console.log(i);
+console.log(j);
+
+</script>
+</head>
+<body>
+<h1>변수 범위</h1>
+</body>
+</html>
