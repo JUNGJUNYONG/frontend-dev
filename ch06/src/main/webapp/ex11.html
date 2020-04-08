@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+JavaScript 이벤트 종류
+1. 마우스
+2. 키보드
+3. form & input
+4. touch
+
+용어 정리
+1. Event Name: load, click, mousedown, keydown, change, submit ...
+2. Event Attribute: DOM Event Model Level(0) 처리, onload, onclick
+3. Event Listener: DOM Event Model Level(2) 처리, function(){}
+4. Event Model : DOM의 HTMLElement의 Event Handler를 설정하는 방법에 대한 표준
+   - DOM Event Model Level(1)
+      
+      (1.) Inline Event Model
+      태그 안에 onclick='자바스크립트 코드' 넣는 것. X(웹표준 위배)
+      
+      (2.) Basic Event Model(고전적인 이벤트 처리 방식, 기본 이벤트 처리 방식)
+      element.onclick = function() {....}
+      -> 문제점 : 이벤트 처리 핸들러를 하나밖에 세팅하지 못한다는 단점.
+      
+   - DOM Event Model Level(2)
+      (1.) Microsoft Internet Explorer : attachEvent, detachEvent
+      (2.) Standar Event Mode : addEventListener, removeEventListener
+      
+      
+      
+      
+      
+      //Native(pure, vanilla) JavaScript
+      var element = document.getElementById('id');
+      if(isIE){
+    	  element.attachEvent("click", function(){...});
+      }else {
+    	  element.addEventListener("click", function(){...});
+      }
+      
+      // jQuery
+      var $obj = ${'#id'};
+      $obj.click(function(){...});
+      
+ */
+ window.addEventListener("load",function(){
+	 document.getElementById("header-1").onclick = function(){
+		 console.log("Event Model0 - Basic");
+	 }
+	 document.getElementById("header-2").addEventListener("click",function(){
+		 console.log("Event Model2 - Basic");
+	 });
+ });
+ 
+ 
+</script>
+</head>
+<body>
+	<h1>DOM Event 처리</h1>
+	<h2 onclick='console.log("clicked!");'>Event Model Level 0 -Inline</h2>
+	<h2 id="header-1">Event Model Level 2 -Basic</h2>
+	<h2 id="header-2">Event Model Level 2 -Basic</h2>
+</body>
+</html>

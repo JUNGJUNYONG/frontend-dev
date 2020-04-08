@@ -3,51 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script>
-var o = {
-		name:"둘리",
-		age: 10,
-		isFemale: false
-}
-var f = function() {
-	console.log("hello world");
-}
-var i = 10;
-var n = new Number(10);
-
-f();
-window.f();
-
-console.log(o);
-console.log(window.o);
-
-console.log("===========객체(Object ) 확장===========");
-
-o.another = {
-		name: "마이콜",
-		age: 30
-};
-
-console.log(o);
-
-f.another = {
-		name: "또치",
-		age: 10,
-		info: function(){
-			console.log(this.name + ":" + this.age);
-		}
-};
-
-console.log(f.another);
-f.another.info();	
-
-console.log("===========기본타입은 확장X===========");
-i.another = {};
-console.log(i.another);
-
+<script type="text/javascript">
+window.addEventListener("load", function(){
+	// (표준 + 비표준) 속성 접근 하기 위해서는 setAttribute 메소드에 속한다.
+	var img = document.createElement('img');
+	setTimeout(function(){
+		document.body.appendChild(img);
+		img.setAttribute('src','https://pds.joins.com/news/component/htmlphoto_mmdata/200402/htm_20040225165332a000a600-001.GIF');
+		img.setAttribute('width','400');
+		img.setAttribute('alt','둘리');
+		img.setAttribute('title','둘리');
+		img.setAttribute('data-name','okokok');
+	}, 2000);
+	
+});
 </script>
 </head>
 <body>
-<h1>전역객체 window</h1>
+	<h1>HTMLElement 속성 조작하기</h1>
 </body>
 </html>

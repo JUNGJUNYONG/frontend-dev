@@ -3,47 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script>
-/* 
-자바스크립트의 객체는 function 타입과 object 타입 2가지가 있다.
-그런데, 보통 function 타입 객체는 함수라 부른다.
-따라서, 자바스크립트 객체라 부르는 것은 object 타입의 객체를 가리킨다.
- */
- // 생성 방법1 - new 키워드를 사용하는방법
- var o1 = new Object();
- o1.name = '둘리';
- o1.age = 10;
- o1.another = {};
- o1.another.name = '마이콜';
- o1.another.age = 30; 
- // 생성 방법2 - literal 사용하는방법
- var o2 = {};
- o2.name = '둘리';
- o2.age = 10;
- console.log(o2);
- 
- //생성 방법 3 - (J)ava(S)cript (O)bject (N)otation : 자바스크립트 객체 표기
- var o3 = {
-	 name: '둘리',
-	 age: 10,
-	 another:{
-		 name: '마이콜',
-		 age: 30
-	 }
-	 
- }
- console.log(o1);
- console.log(o2);
- console.log(o3);
- 
- /* xmlHttpRequest 호스트 객체를 사용해서 통신한다.*/
- var response = '{"no": 1, "name": "정준용", "email": "jkouese@gmail,com"}'
- var userVo = eval("("+response+")");
- console.log(userVo.no + ":" + userVo.name)
- </script>
-
+<script type="text/javascript">
+window.addEventListener("load", function(){
+	var html = "<h1>Hello DOM</h1>";
+	setTimeout(function(){
+		document.body.innerHTML += html;
+	}, 2000);
+	
+});
+</script>
 </head>
 <body>
-	<h1>object 타입 객체 생성</h1>
+	<h1>HTMLElement 만들기02</h1>
 </body>
 </html>

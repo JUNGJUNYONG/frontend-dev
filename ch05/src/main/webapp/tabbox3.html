@@ -8,7 +8,8 @@
 	margin: 0;
 	padding: 0
 }
-ul,ol{
+
+ul, ol {
 	list-style-type: none;
 }
 
@@ -17,13 +18,16 @@ body {
 	font-size: 0.75em;
 	color: #333
 }
+
 .tab-box {
 	width: 520px;
 	margin: 50px auto 0;
 }
+
 .tab-box ul {
 	height: 24px;
 }
+
 .tab-box ul li {
 	float: right;
 	width: 100px;
@@ -35,58 +39,35 @@ body {
 	border-radius: 10px 10px 0 0;
 	cursor: pointer;
 }
+
 .tab-box div {
 	width: 516px;
 	height: 200px;
 	border: 1px solid #999;
-	margin-top: -1px;	
+	margin-top: -1px;
 	text-align: center;
 	line-height: 200px;
 }
-.tab-box ul li.selected{
-	background-color: #fC6; 
+
+.tab-box ul li.selected {
+	background-color: #fC6;
 }
-
 </style>
+<script type="text/javascript" src="tabbox.js"></script>
 <script type="text/javascript">
-
-var onTabClicked = function () {
-		var liSelecteds = document.getElementsByClassName('selected');
-		(liSelecteds.length == 1) &&(liSelecteds[0].className = '');
-		this.className = 'selected';
-}	
- 
- 
- window.addEventListener('load',function() {
-	 	var divTabBox = document.getElementsByClassName('tab-box')[0];
-		var ulTabBox = divTabBox.childNodes[1];	
-		var liTabs = ulTabBox.getElementsByTagName('li');
-		console.log(liTabs.length);
-		
-		for (var i = 0; i < liTabs.length; i++) {
-				liTabs[i].addEventListener('click', onTabClicked);
-				liTabs[i].addEventListener('click', function(){
-					console.log(this.innerText);
-				});
-			}
-		}) 
-
-	
-
+	TabBox.init();
 </script>
 </head>
 <body>
 	<div class="tab-box">
 		<ul>
-			<li>메뉴 5</li>
+			<li class="chacked">메뉴 5</li>
 			<li>메뉴 4</li>
 			<li>메뉴 3</li>
 			<li>메뉴 2</li>
 			<li>메뉴 1</li>
 		</ul>
-		<div>
-		탭뷰입니다.
-		</div>
+		<div>탭뷰입니다.</div>
 	</div>
 </body>
 </html>
