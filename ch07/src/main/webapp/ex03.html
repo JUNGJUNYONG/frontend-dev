@@ -7,7 +7,7 @@
 var jQuery = function(selector) {
 	console.log(typeof(selector));
 	if(typeof(selector) == 'object'){
-		return selector;
+		return _jQuery(selector);
 	}
 	var elements = document.querySelectorAll(selector);
 	return new _jQuery(elements);
