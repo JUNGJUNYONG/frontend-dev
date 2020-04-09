@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="./jquery/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var $obj = $(".par");
+		console.log($obj.length); //2
+		console.log(typeof ($obj) + ":" + ($obj instanceof Array)); // 배열이 아니라 jQuery Object 이다.
+
+		console.log($obj[0]); //jQuery Object가 아니다. HTMLElement
+		console.log($obj.get(0)); //jQuery Object가 아니다. HTMLElement
+		$obj.css("color", "red");
+		$obj.click(function() {
+			// 이벤트 핸들러에서 this는 jQuery 객체가 아니다. HTMLElement다.
+			console.log("clicked" + this);
+			$(this).css("text-decoration", "underline");
+		});
+	});
+</script>
+</head>
+<body>
+	<h1 class="header">dQuery 만들기</h1>
+	<p class="par">문장1</p>
+	<p>문장2</p>
+	<p class="par">문장3</p>
+	<p>문장4</p>
+</body>
+</html>
