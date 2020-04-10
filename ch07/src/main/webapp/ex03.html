@@ -3,17 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript">
-// class 선택자만 지원해주는 jQuery 라이브러리
+// 간단 jQuery 만들어 보기
 var jQuery = function(selector) {
-	console.log(typeof(selector));
 	if(typeof(selector) == 'object'){
-		return _jQuery(selector);
+		return new _jQuery([selector]);
 	}
 	var elements = document.querySelectorAll(selector);
 	return new _jQuery(elements);
 }
 
 var _jQuery = function(elements){
+	console.log(this);
 	this.length = elements.length;
 	for(var i = 0; i < elements.length; i++){
 		this["" + i] = elements[i];

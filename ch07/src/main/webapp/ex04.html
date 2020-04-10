@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="./jquery/jquery-3.4.1.js"></script>
 <script type="text/javascript">
+// jQuery object 알아보기
 	$(function() {
 		var $obj = $(".par");
 		console.log($obj.length); //2
@@ -15,7 +16,14 @@
 		$obj.click(function() {
 			// 이벤트 핸들러에서 this는 jQuery 객체가 아니다. HTMLElement다.
 			console.log("clicked" + this);
-			$(this).css("text-decoration", "underline");
+			var $obj = $(this);
+			/* $obj.css("text-decoration", "underline");
+			$obj.text('클릭!'); */
+			
+			// jQuery Object의 모든 메소드(예외: traverse API)는 호출한 jQuery Object를 반환 한다.
+			//method chain이 가능하다.
+			$obj.css("text-decoration", "underline").text('클릭!');;
+			
 		});
 	});
 </script>
