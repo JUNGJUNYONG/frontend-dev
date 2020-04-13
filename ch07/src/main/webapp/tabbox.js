@@ -10,7 +10,7 @@ var TabBox = {
 		init : function() {
 			$(function(){
 				$('.tab-box ul li:nth-child(5)').addClass("selected");
-				$('.tab-box div')[0].innerText=$('.selected')[0].innerText.substring(3,4)+"번 탭뷰 입니다.";
+				$('.tab-box div')[0].innerText=$('.selected').text().substring(3,4)+"번 탭뷰 입니다.";
 				$('.tab-box ul li').click(TabBox._onTabClicked);
 			})
 			
